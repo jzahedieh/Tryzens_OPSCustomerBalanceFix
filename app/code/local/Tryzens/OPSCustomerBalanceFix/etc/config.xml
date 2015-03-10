@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Tryzens_OPSCustomerBalanceFix>
+            <version>0.1.0</version>
+        </Tryzens_OPSCustomerBalanceFix>
+    </modules>
+    <global>
+        <models>
+            <tryzens_opscustomerbalancefix>
+                <class>Tryzens_OPSCustomerBalanceFix_Model</class>
+            </tryzens_opscustomerbalancefix>
+            <enterprise_customerbalance>
+                <rewrite>
+                    <observer>Tryzens_OPSCustomerBalanceFix_Model_CustomerBalance_Observer</observer>
+                </rewrite>
+            </enterprise_customerbalance>
+        </models>
+        <helpers>
+            <ops>
+                <rewrite>
+                    <order_capture>Tryzens_OPSCustomerBalanceFix_Helper_OPS_Order_Capture</order_capture>
+                </rewrite>
+            </ops>
+        </helpers>
+    </global>
+</config>
